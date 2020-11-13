@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+  
+<div class="example-wrapper">
+    <h1>Hello! ✅</h1>
+      {{ dump(resa) }}
+    <table class="table table-dark">
+  <thead>
+ 
+    <tr>
+      <th scope="col">Voiture</th>
+      <th scope="col">Plaque</th>
+      <th scope="col">Date de prise </th>
+      <th scope="col">Date de rendu</th>
+      <th scope="col">Disponibilité</th>
+    </tr>
+  </thead>
+  <tbody>   
+    <tr>
+      <td>{{ voiture.name }}</td>
+      <td>{{ voiture.plaque }}</td>
+      {# <td>{{ data['dateDebut']|date }}</td>
+      <td>{{ data['dateFin']|date }}</td>   #}
+      <td> {{ form(form) }} </td> 
+    </tr>
+  </tbody>
+</table>
+</div>  
+
+{% endblock %}

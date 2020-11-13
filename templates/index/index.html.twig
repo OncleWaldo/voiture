@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+  
+<div class="example-wrapper">
+    <h1>Hello! ✅</h1>
+    {{ form(form) }}
+    {{ dump(data) }}
+    {{ dump(allresa) }}
+    {# {{ dump(carid) }} #}
+<br><br>
+     
+  {# {% if voiture %} #}
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Voiture</th>
+      <th scope="col">Plaque</th>
+      <th scope="col">Disponibilité</th>
+    </tr>
+  </thead>
+  <tbody>   
+  {% for voiture in voituresdispo %}
+    <tr>
+      <td>{{ voiture.id }}</td>
+      <td>{{ voiture.name }}</td>
+      <td>{{ voiture.plaque }}</td>
+      <td> <a href="{{ path('index_show', {'id': voiture.id , 'start': data['dateDebut']|date, 'end': data['dateFin']|date }) }}">Réserver!show</a> </td> 
+    </tr>
+  </tbody>
+   {% endfor %} 
+   {# {% endif %}  #}
+</table>
+</div>  
+
+{% endblock %}
